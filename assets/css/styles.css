@@ -1,0 +1,878 @@
+/* ==========================================================================
+   PORTAL DESA KABUPATEN FAKFAK — styles.css
+   Ocean Teal + Emerald + Amber Muted, terinspirasi julukan Fakfak
+   sebagai "Kota Pala" dan lanskap pesisir Papua Barat.
+   ========================================================================== */
+
+:root {
+  --teal-dalam: #082e37;
+  --teal-utama: #0f4c5c;
+  --teal-terang: #17677c;
+  --emerald: #1b4931;
+  --emerald-terang: #2d6b47;
+  --amber: #c8a24a;
+  --amber-redup: #a9863a;
+  --krem: #f6f3ea;
+  --krem-kartu: #fffdf8;
+  --tinta: #10201f;
+  --tinta-lembut: #46605f;
+  --garis: rgba(246, 243, 234, 0.14);
+  --garis-krem: #e6e0cf;
+
+  --font-judul: "Fraunces", "Georgia", serif;
+  --font-tubuh: "Manrope", "Segoe UI", sans-serif;
+
+  --radius-kartu: 14px;
+  --bayangan-lembut: 0 18px 40px -20px rgba(8, 46, 55, 0.45);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-tubuh);
+  color: var(--tinta);
+  background: var(--krem);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-judul); margin: 0; line-height: 1.15; }
+button { font-family: var(--font-tubuh); }
+
+.wadah {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   TOP BAR
+   ========================================================================== */
+
+.topbar {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+}
+
+.topbar__isi {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 24px;
+  color: var(--krem);
+}
+
+.topbar__brand { display: flex; align-items: center; gap: 12px; }
+.topbar__logo { width: 42px; height: auto; flex-shrink: 0; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35)); }
+
+.topbar__teks-utama {
+  font-family: var(--font-judul);
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.topbar__teks-sub { font-size: 0.76rem; color: var(--amber); margin-top: 1px; font-weight: 600; }
+
+.topbar__nav { display: flex; gap: 30px; font-size: 0.9rem; }
+.topbar__nav a {
+  position: relative;
+  color: rgba(246, 243, 234, 0.9);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding-bottom: 4px;
+  transition: color 0.15s ease;
+}
+.topbar__nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 2px;
+  background: var(--amber);
+  transition: right 0.18s ease;
+}
+.topbar__nav a:hover { color: #f8d0ae; }
+.topbar__nav a:hover::after { right: 0; }
+
+.topbar__menu-hp {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--krem);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.topbar__nav-hp {
+  display: none;
+  flex-direction: column;
+  padding: 4px 24px 16px;
+  gap: 12px;
+  font-size: 0.94rem;
+  background: var(--teal-dalam);
+}
+.topbar__nav-hp a {
+  color: rgba(246, 243, 234, 0.9);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--garis);
+}
+.topbar__nav-hp.terbuka { display: flex; }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  color: var(--krem);
+  overflow: hidden;
+  padding: 96px 0 0;
+  isolation: isolate;
+}
+
+/* Latar nuansa kampung Fakfak: pesisir, bukit, rumah panggung, pohon kelapa */
+.hero__latar {
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/lain/hero.jpeg");
+  background-size: cover;
+  background-position: center bottom;
+  z-index: -2;
+}
+
+.hero__latar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(8, 46, 55, 0.92) 0%, rgba(8, 46, 55, 0.72) 32%, rgba(8, 46, 55, 0.22) 62%, rgba(8, 46, 55, 0.1) 100%),
+    linear-gradient(to top, rgba(8, 46, 55, 0.55) 0%, rgba(8, 46, 55, 0) 30%);
+}
+
+.hero__watermark {
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/logo/logo-hdmi.png");
+  background-repeat: no-repeat;
+  background-size: 420px auto;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  padding-bottom: 0;
+  min-height: 460px;
+}
+
+.hero__badge-klipaa {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.82rem;
+  color: rgba(246, 243, 234, 0.88);
+  border: 1px solid rgba(200, 162, 74, 0.4);
+  border-radius: 999px;
+  padding: 7px 16px;
+  margin-bottom: 24px;
+}
+.hero__badge-klipaa i { color: var(--amber); }
+.hero__badge-klipaa strong { color: var(--amber); font-weight: 700; }
+
+.hero__judul {
+  font-size: clamp(1.9rem, 3.3vw, 2.7rem);
+  font-weight: 600;
+  max-width: 17ch;
+}
+
+.hero__deskripsi {
+  margin-top: 18px;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  max-width: 46ch;
+  color: rgba(246, 243, 234, 0.85);
+}
+
+.hero__tombol-grup {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.pimpinan-kartu {
+  position: relative;
+  background: rgba(10, 42, 51, 0.55);
+  border: 1px solid rgba(200, 220, 215, 0.18);
+  border-radius: 22px;
+  padding: 28px 24px 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 20px 40px -18px rgba(3, 20, 24, 0.6);
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.pimpinan-kartu__baris {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.pimpinan-kartu__figur {
+  width: 50%;
+  max-width: 200px;
+  text-align: center;
+}
+
+.pimpinan-kartu__bingkai {
+  border: 3px solid rgba(214, 219, 220, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0c2b33;
+  aspect-ratio: 4 / 5;
+}
+
+.pimpinan-kartu__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.pimpinan-kartu__nama {
+  margin-top: 14px;
+  font-family: var(--font-judul);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--krem);
+  line-height: 1.3;
+}
+
+.pimpinan-kartu__jabatan {
+  margin-top: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--amber);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pimpinan-kartu__sub {
+  font-size: 0.7rem;
+  color: rgba(246, 243, 234, 0.7);
+  margin-top: 2px;
+}
+
+.pimpinan-kartu__caption {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(200, 220, 215, 0.18);
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(246, 243, 234, 0.8);
+}
+
+.gelombang { display: block; width: 100%; height: 56px; margin-top: -2px; }
+
+/* ==========================================================================
+   TOMBOL (dipakai lintas section)
+   ========================================================================== */
+
+.tombol {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.94rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  text-decoration: none;
+}
+.tombol:hover { transform: translateY(-2px); }
+
+.tombol--utama { background: var(--krem); color: var(--teal-dalam); }
+.tombol--utama:hover { background: #177280; }
+
+.tombol--kedua {
+  background: transparent;
+  border-color: rgba(246, 243, 234, 0.5);
+  color: var(--krem);
+}
+.tombol--kedua:hover { border-color: var(--krem); }
+
+.tombol--ajakan { background: #177280; color: var(--krem); }
+.tombol--ajakan:hover { background: #06232a; }
+
+/* ==========================================================================
+   KONTRIBUSI SECTION
+   ========================================================================== */
+
+.kontribusi { background: var(--krem); padding: 64px 0; }
+
+.kontribusi__grid {
+  display: block;
+}
+
+.kartu-kontribusi {
+  background: var(--krem-kartu);
+  border: 1px solid var(--garis-krem);
+  border-radius: var(--radius-kartu);
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.kartu-kontribusi .kartu-ajakan {
+  flex: 0 0 300px;
+  border-radius: 12px;
+  padding: 28px 26px;
+}
+
+.kartu-kontribusi__ilustrasi {
+  width: 260px;
+  height: auto;
+  align-self: stretch;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.kartu-kontribusi__konten { flex: 1; min-width: 0; }
+
+.kartu-kontribusi__judul {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  color: var(--teal-dalam);
+}
+
+.kartu-kontribusi__teks {
+  margin-top: 12px;
+  color: var(--tinta-lembut);
+  line-height: 1.6;
+  max-width: 54ch;
+}
+
+.langkah-grup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.langkah {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--tinta-lembut);
+}
+
+.langkah__ikon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(27, 73, 49, 0.09);
+  color: var(--teal-dalam);
+  font-size: 1.1rem;
+}
+
+.kartu-ajakan {
+  background: #064e61;
+  border-radius: var(--radius-kartu);
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--krem);
+}
+
+.kartu-ajakan__judul { font-size: 1.4rem; }
+
+.kartu-ajakan__teks {
+  margin-top: 10px;
+  line-height: 1.55;
+  color: rgba(216, 216, 216, 0.82);
+}
+
+.kartu-ajakan .tombol--ajakan { margin-top: 20px; align-self: flex-start; }
+
+/* ==========================================================================
+   EXPLORER SECTION
+   ========================================================================== */
+
+.explorer { background: var(--krem); padding: 20px 0 90px; }
+
+.explorer__kepala { text-align: center; max-width: 90ch; margin: 0 auto 36px; }
+.explorer__judul {
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--teal-dalam);
+  text-align: center;
+}
+
+.explorer__deskripsi {
+  margin-top: 10px;
+  color: var(--tinta-lembut);
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+.kotak-cari { max-width: 680px; margin: 28px auto 0; position: relative; }
+
+.kotak-cari__input {
+  width: 100%;
+  padding: 14px 44px 14px 46px;
+  border-radius: 12px;
+  border: 1.5px solid var(--garis-krem);
+  background: var(--krem-kartu);
+  font-size: 0.98rem;
+  color: var(--tinta);
+}
+.kotak-cari__input:focus { border-color: var(--emerald-terang); }
+
+.kotak-cari__ikon {
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--teal-utama);
+  font-size: 0.92rem;
+  pointer-events: none;
+}
+
+.kotak-cari__reset {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #8a8370;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.kotak-cari__reset.tampil { opacity: 1; pointer-events: auto; }
+
+.info-hasil { text-align: center; margin: 18px 0 0; font-size: 0.86rem; color: #6b7a70; }
+
+mark {
+  background: rgba(200, 162, 74, 0.38);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.grid-distrik {
+  margin-top: 34px;
+  display: flex;
+  gap: 14px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  padding: 10px 4px 14px;
+}
+
+.pembungkus-grid-distrik {
+  position: relative;
+  margin-top: 34px;
+}
+
+.pembungkus-grid-distrik .grid-distrik {
+  margin-top: 0;
+}
+
+.tombol-geser {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--garis-krem);
+  background: var(--krem-kartu);
+  color: var(--teal-utama);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px -6px rgba(8, 46, 55, 0.35);
+  z-index: 5;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tombol-geser:hover { background: var(--teal-utama); color: var(--krem); }
+
+.tombol-geser--kiri { left: -18px; }
+.tombol-geser--kanan { right: -18px; }
+
+.tombol-geser:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.kartu-distrik {
+  background: var(--krem-kartu);
+  border: 1px solid var(--garis-krem);
+  border-radius: 16px;
+  padding: 18px 16px 22px;      /* padding bawah ditambah -> kartu lebih tinggi */
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, background-color 0.15s ease;
+  color: var(--tinta);
+  flex: 0 0 190px;
+  width: 190px;
+  scroll-snap-align: start;
+  box-shadow: 0 10px 24px -18px rgba(8, 46, 55, 0.35);
+}
+
+.kartu-distrik__ikon {
+  display: block;
+  width: 100%;
+  height: 108px;                /* sebelumnya 68px, gambar asli butuh ruang lebih */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.kartu-distrik__nomor {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--teal-utama);
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+
+.kartu-distrik__label {
+  display: block;
+  font-size: 0.72rem;
+  color: #8a8370;
+  margin-bottom: 2px;
+}
+
+.kartu-distrik__nama {
+  display: block;
+  font-family: var(--font-judul);
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+.kartu-distrik__jumlah { display: block; font-size: 0.76rem; color: #8a8370; margin-top: 5px; }
+
+.kartu-distrik:hover { border-color: var(--emerald-terang); transform: translateY(-2px); }
+
+.kartu-distrik--aktif {
+  background: var(--teal-utama);
+  border-color: var(--teal-utama);
+  color: var(--krem);
+}
+.kartu-distrik--aktif .kartu-distrik__nomor { color: var(--krem); }
+.kartu-distrik--aktif .kartu-distrik__label { color: rgba(246, 243, 234, 0.7); }
+.kartu-distrik--aktif .kartu-distrik__jumlah { color: rgba(246, 243, 234, 0.75); }
+.kartu-distrik--aktif .kartu-distrik__ikon { color: var(--amber); }
+
+
+.kartu-distrik--aktif .kartu-distrik__ikon {
+  background: rgba(246, 243, 234, 0.12);
+}
+
+
+.panel-kampung {
+  margin-top: 22px;
+  background: var(--krem-kartu);
+  border: 1px solid var(--emerald-terang);
+  border-radius: var(--radius-kartu);
+  padding: 22px;
+}
+
+.panel-kampung__kepala {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.panel-kampung__judul {
+  font-size: 1.1rem;
+  color: var(--teal-dalam);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel-kampung__judul i { color: var(--amber-redup); font-size: 0.95rem; }
+
+.tombol-kembali {
+  background: none;
+  border: 1.5px solid var(--garis-krem);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.86rem;
+  color: var(--tinta-lembut);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.tombol-kembali:hover { border-color: var(--emerald-terang); color: var(--emerald-terang); }
+
+.daftar-kampung {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tautan-kampung {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  font-size: 0.92rem;
+  color: var(--tinta);
+  text-decoration: none;
+  border: 1px solid var(--garis-krem);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.tautan-kampung:hover { background: rgba(27, 73, 49, 0.06); border-color: rgba(27, 73, 49, 0.2); }
+
+.tautan-kampung__nomor {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--amber-redup);
+  flex-shrink: 0;
+  min-width: 20px;
+}
+
+.tautan-kampung__nama { flex: 1; }
+
+.tautan-kampung__ikon { margin-left: auto; color: #8a8370; flex-shrink: 0; font-size: 0.8rem; }
+
+/* ==========================================================================
+   STATISTIK SECTION
+   ========================================================================== */
+
+.statistik {
+  position: relative;
+  color: var(--krem);
+  padding: 48px 0 40px;
+  overflow: hidden;
+}
+
+.statistik::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/lain/hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.statistik::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8,46,55,0.55) 0%, rgba(8,46,55,0.75) 55%, var(--teal-dalam) 100%);
+  z-index: -1;
+}
+
+.tombol-selengkapnya {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--krem);
+  color: var(--teal-dalam);
+  font-weight: 700;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.statistik__grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.statistik__judul { font-size: clamp(1.3rem, 2vw, 1.7rem); }
+.statistik__teks { margin-top: 10px; color: rgba(246, 243, 234, 0.8); line-height: 1.6; max-width: 46ch; }
+
+.statistik__angka-grup { display: flex; gap: 40px; }
+
+.statistik__angka { text-align: center; }
+.statistik__nilai {
+  display: block;
+  font-family: var(--font-judul);
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--krem);
+}
+.statistik__label { display: block; font-size: 0.82rem; color: rgba(246, 243, 234, 0.75); margin-top: 2px; }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+  background: var(--teal-dalam);
+  color: rgba(246, 243, 234, 0.8);
+  padding: 0 0 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Latar nuansa kampung Fakfak, dibalik agar bukit ada di atas & lebih redup */
+
+
+.footer__pola {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 18px, var(--krem) 18px, transparent 19px);
+  pointer-events: none;
+}
+
+.footer__isi { position: relative; }
+
+.footer__nilai-grup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 12px 0 18px;
+}
+
+.footer__nilai {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(246, 243, 234, 0.06);
+  border: 1px solid rgba(246, 243, 234, 0.14);
+}
+
+.footer__nilai i {
+  font-size: 1.1rem;
+  color: var(--amber);
+  margin-top: 2px;
+}
+
+.footer__nilai-judul { font-size: 0.9rem; font-weight: 700; color: var(--krem); }
+.footer__nilai-teks { font-size: 0.8rem; color: rgba(246, 243, 234, 0.72); margin-top: 3px; line-height: 1.4; }
+
+.footer__bawah {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.86rem;
+}
+
+.footer__powered { color: var(--krem); text-decoration: none; font-weight: 600; }
+
+/* ==========================================================================
+   RESPONSIF
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  /* .grid-distrik { flex-basis: calc((100% - 2 * 12px) / 3); } */
+  .daftar-kampung { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .hero { padding-top: 84px; }
+  .hero__grid { grid-template-columns: 1fr; min-height: 0; }
+  .hero__judul, .hero__deskripsi { max-width: none; }
+  .pimpinan-kartu { margin-top: 32px; }
+  .kontribusi__grid { grid-template-columns: 1fr; }
+  .topbar__nav { display: none; }
+  .topbar__menu-hp { display: inline-flex; }
+  .kartu-kontribusi { flex-direction: column; }
+  .kartu-kontribusi .kartu-ajakan { margin: 0; flex-basis: auto; }
+  
+}
+
+@media (max-width: 640px) {
+  /* .grid-distrik { flex-basis: calc((100% - 1 * 12px) / 2); } */
+  .langkah-grup { grid-template-columns: repeat(2, 1fr); }
+  .statistik__grid { flex-direction: column; align-items: flex-start; }
+  .statistik__angka-grup { gap: 28px; }
+  .footer__nilai-grup { grid-template-columns: repeat(2, 1fr); }
+  .kartu-kontribusi { flex-direction: column; }
+  .kartu-kontribusi__ilustrasi { width: 100%; height: 160px; }
+}
+
+@media (max-width: 520px) {
+  .pimpinan-kartu { padding: 20px 14px 16px; }
+  .pimpinan-kartu__baris { gap: 10px; }
+  .pimpinan-kartu__figur { max-width: 150px; }
+  .hero__tombol-grup { flex-direction: column; align-items: stretch; }
+  .daftar-kampung { grid-template-columns: 1fr; }
+  .panel-kampung__kepala { flex-direction: column; align-items: flex-start; }
+  .footer__bawah { flex-direction: column; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tombol:hover, .kartu-distrik:hover { transform: none; }
+  * { transition-duration: 0.01ms !important; }
+}

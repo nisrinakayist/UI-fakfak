@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portal Desa Kabupaten Fakfak — Papua Barat</title>
+<meta name="description" content="Portal web desa se-Kabupaten Fakfak, Provinsi Papua Barat. Jelajahi 17 distrik dan seluruh kampung, serta ikut membangun transparansi desa." />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS via CDN (dipakai untuk util kecil, styling utama ada di styles.css) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<!-- ============================= HERO (navbar menyatu transparan) ============================= -->
+<section class="hero" id="beranda">
+  <div class="hero__latar" aria-hidden="true"></div>
+  <div class="hero__watermark" aria-hidden="true"></div>
+
+  <!-- ============================= TOP BAR TRANSPARAN ============================= -->
+  <header class="topbar">
+    <div class="topbar__isi">
+      <div class="topbar__brand">
+        <img src="assets/img/logo/logo-fakfak.png" alt="Logo Kabupaten Fakfak" class="topbar__logo" />
+        <div>
+          <div class="topbar__teks-utama">KABUPATEN FAKFAK</div>
+          <div class="topbar__teks-sub">Provinsi Papua Barat</div>
+        </div>
+      </div>
+      <nav class="topbar__nav">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#panduan">Panduan</a>
+        <a href="#berita">Berita</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <button class="topbar__menu-hp" id="tombolMenuHp" aria-label="Buka menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <nav class="topbar__nav-hp" id="navHp">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#panduan">Panduan</a>
+      <a href="#berita">Berita</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <div class="wadah hero__grid">
+    <div class="hero__teks">
+      <div class="hero__badge-klipaa">
+        <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i>
+        <span>Supported by <strong>Klipaa</strong></span>
+      </div>
+
+      <h1 class="hero__judul">Satu Kabupaten, Ribuan Kampung, Satu Tujuan</h1>
+      <p class="hero__deskripsi">
+        Kenali potensi setiap kampung, bangun informasi desa bersama-sama, dan wujudkan
+        transparansi Kabupaten Fakfak — dari pesisir Teluk Patipi hingga pedalaman Bomberay.
+      </p>
+
+      <div class="hero__tombol-grup">
+        <a href="#explorer" class="tombol tombol--utama">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          Jelajahi Kampung
+        </a>
+        <a href="https://klipaa.id/auth/signup" class="tombol tombol--kedua">
+          <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+          Buat Akun
+        </a>
+      </div>
+    </div>
+
+    <div class="pimpinan-kartu">
+      <div class="pimpinan-kartu__baris">
+        <div class="pimpinan-kartu__figur">
+          <div class="pimpinan-kartu__bingkai">
+            <img src="assets/img/pimpinan/bupati2.png" alt="..." class="pimpinan-kartu__foto" />
+          </div>
+          <div class="pimpinan-kartu__nama">H. Samaun Dahlan,<br>S.Sos., M.AP</div>
+          <div class="pimpinan-kartu__jabatan">Bupati</div>
+          <div class="pimpinan-kartu__sub">Kabupaten Fakfak</div>
+        </div>
+        <div class="pimpinan-kartu__figur">
+          <div class="pimpinan-kartu__bingkai">
+            <img src="assets/img/pimpinan/wakilbupati3.png" alt="..." class="pimpinan-kartu__foto" />
+          </div>
+          <div class="pimpinan-kartu__nama">Drs. Donatus<br>Nimbitkendik, M.T</div>
+          <div class="pimpinan-kartu__jabatan">Wakil Bupati</div>
+          <div class="pimpinan-kartu__sub">Kabupaten Fakfak</div>
+        </div>
+      </div>
+      <div class="pimpinan-kartu__caption">Pimpinan Daerah Kabupaten Fakfak</div>
+    </div>
+  </div>
+
+  <svg class="gelombang" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 32 C 240 64 480 0 720 20 C 960 40 1200 8 1440 30 L1440 64 L0 64 Z" fill="#f6f3ea"/>
+  </svg>
+</section>
+
+<!-- ============================= KONTRIBUSI SECTION ============================= -->
+<section class="kontribusi" id="tentang">
+  <div class="wadah kontribusi__grid">
+    <div class="kartu-kontribusi">
+      <img src="assets/img/lain/ilustrasi-kampung.jpg" alt="Ilustrasi kampung Fakfak" class="kartu-kontribusi__ilustrasi" />
+      <div class="kartu-kontribusi__konten">
+        <h2 class="kartu-kontribusi__judul">Kenali Kampung, Beri Kontribusi Nyata</h2>
+        <p class="kartu-kontribusi__teks">
+          Web kampung dikelola bersama antara pemerintah kabupaten dan masyarakat kampung,
+          sehingga setiap potensi dan kebutuhan dapat tersampaikan dengan terbuka.
+        </p>
+        <div class="langkah-grup">
+          <div class="langkah">
+            <span class="langkah__ikon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>
+            <span class="langkah__label">Untuk Semua</span>
+          </div>
+          <div class="langkah">
+            <span class="langkah__ikon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
+            <span class="langkah__label">Buat Akun</span>
+          </div>
+          <div class="langkah">
+            <span class="langkah__ikon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span>
+            <span class="langkah__label">Isi Info</span>
+          </div>
+          <div class="langkah">
+            <span class="langkah__ikon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+            <span class="langkah__label">Tampil di Web</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu-ajakan">
+        <h3 class="kartu-ajakan__judul">Jangan Tunggu!</h3>
+        <p class="kartu-ajakan__teks">
+          Kampung Anda berhak dikenal. Buat akun sekarang dan mulai isi informasi web
+          kampung dalam hitungan menit.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.klipaa.klipaa_mobile" class="tombol tombol--ajakan">
+          Buat Akun Gratis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>  
+</section>
+
+<!-- ============================= EXPLORER SECTION ============================= -->
+<section class="explorer" id="explorer">
+  <div class="wadah">
+    <div class="explorer__kepala">
+      <h2 class="explorer__judul">JELAJAHI DISTRIK DI KABUPATEN FAKFAK</h2>
+      <p class="explorer__deskripsi">
+        Kabupaten Fakfak terdiri dari 17 distrik. Pilih salah satu distrik untuk melihat
+        daftar kampungnya, atau cari langsung nama distrik maupun kampung di bawah ini.
+      </p>
+
+      <div class="kotak-cari">
+        <i class="fa-solid fa-magnifying-glass kotak-cari__ikon" aria-hidden="true"></i>
+        <input type="text" id="inputCari" class="kotak-cari__input" placeholder="Cari nama distrik atau kampung..." autocomplete="off" />
+        <button id="tombolResetCari" class="kotak-cari__reset" type="button" aria-label="Hapus pencarian">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="info-hasil" id="infoHasil"></p>
+    </div>
+
+    <div class="pembungkus-grid-distrik">
+      <button class="tombol-geser tombol-geser--kiri" id="tombolGeserKiri" type="button" aria-label="Geser ke kiri">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <div class="grid-distrik" id="gridDistrik"></div>
+
+      <button class="tombol-geser tombol-geser--kanan" id="tombolGeserKanan" type="button" aria-label="Geser ke kanan">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="panel-kampung" id="panelKampung" hidden>
+      <div class="panel-kampung__kepala">
+        <h3 class="panel-kampung__judul">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <span id="panelKampungJudulTeks">Kampung di Distrik</span>
+        </h3>
+        <button class="tombol-kembali" id="tombolKembali" type="button">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Kembali ke Distrik
+        </button>
+      </div>
+      <ul class="daftar-kampung" id="daftarKampung"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= STATISTIK SECTION ============================= -->
+<section class="statistik">
+  <div class="wadah statistik__grid">
+    <div>
+      <h2 class="statistik__judul">Kabupaten Fakfak</h2>
+      <p class="statistik__teks">
+        Dikenal sebagai Kota Pala, Kabupaten Fakfak adalah tanah bersatunya wilayah pesisir dan
+        pegunungan di Papua Barat. Melalui portal ini, seluruh distrik dan kampung dapat saling
+        terhubung, berbagi informasi, dan membangun transparansi bersama menuju kesejahteraan warga.
+      </p>
+      <a href="#tentang" class="tombol-selengkapnya">Selengkapnya</a>
+    </div>
+    <div class="statistik__angka-grup">
+      <div class="statistik__angka">
+        <span class="statistik__nilai">17</span>
+        <span class="statistik__label">Distrik</span>
+      </div>
+      <div class="statistik__angka">
+        <span class="statistik__nilai">89+</span>
+        <span class="statistik__label">Kampung</span>
+      </div>
+      <div class="statistik__angka">
+        <span class="statistik__nilai" id="angkaPartisipasi">0</span>
+        <span class="statistik__label">Kampung Terdaftar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="footer" id="kontak">
+  <div class="footer__pola" aria-hidden="true"></div>
+  <div class="wadah footer__isi">
+    <div class="footer__nilai-grup">
+      <div class="footer__nilai">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        <div>
+          <div class="footer__nilai-judul">Informasi Terpercaya</div>
+          <div class="footer__nilai-teks">Dikelola oleh pemerintah kampung dan diverifikasi.</div>
+        </div>
+      </div>
+      <div class="footer__nilai">
+        <i class="fa-solid fa-lock-open" aria-hidden="true"></i>
+        <div>
+          <div class="footer__nilai-judul">Terbuka untuk Semua</div>
+          <div class="footer__nilai-teks">Akses informasi kampung dengan mudah dan cepat.</div>
+        </div>
+      </div>
+      <div class="footer__nilai">
+        <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+        <div>
+          <div class="footer__nilai-judul">Partisipasi Aktif</div>
+          <div class="footer__nilai-teks">Bersama membangun kampung melalui informasi.</div>
+        </div>
+      </div>
+      <div class="footer__nilai">
+        <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+        <div>
+          <div class="footer__nilai-judul">Terhubung Sepenuhnya</div>
+          <div class="footer__nilai-teks">Seluruh kampung terhubung dalam satu portal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bawah">
+      <span>© <span id="tahunFooter"></span> Pemerintah Kabupaten Fakfak &amp; Himpunan Desa Mandiri Indonesia (HDMI).</span>
+      <a href="#" class="footer__powered">Powered by Klipaa</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
