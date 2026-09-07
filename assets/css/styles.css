@@ -866,9 +866,9 @@ mark {
   .kartu-kontribusi { flex-direction: column; }
   .kartu-kontribusi__ilustrasi { width: 100%; height: 160px; }
   .kartu-distrik {
-    flex: 0 0 160px !important; /* Ukuran pas di layar HP */
-    width: 160px !important;
-    max-width: 160px !important;
+    flex: 0 0 30% !important; /* Ukuran pas di layar HP */
+    width: 30% !important;
+    max-width: none !important;
     scroll-snap-align: start;
     padding: 12px 10px 14px;
   }
