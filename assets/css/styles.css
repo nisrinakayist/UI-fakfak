@@ -866,10 +866,11 @@ mark {
   .kartu-kontribusi { flex-direction: column; }
   .kartu-kontribusi__ilustrasi { width: 100%; height: 160px; }
   .kartu-distrik {
-    flex: 0 0 160%;
-    width: 160%;
-    padding: 14px 12px;
-    box-sizing: border-box;
+    flex: 0 0 160px !important; /* Ukuran pas di layar HP */
+    width: 160px !important;
+    max-width: 160px !important;
+    scroll-snap-align: start;
+    padding: 12px 10px 14px;
   }
   .kartu-distrik__ikon {
     height: 80px;
@@ -890,6 +891,16 @@ mark {
   .kartu-distrik__jumlah {
     font-size: 0.75rem;
     margin-top: 4px;
+  }
+
+  .grid-distrik {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Paksa tetap sejajar ke samping */
+    overflow-x: auto !important;  /* Aktifkan scroll samping */
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 10px 16px;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
