@@ -512,10 +512,16 @@ mark {
   margin-top: 34px;
   display: flex;
   gap: 14px;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: visible;
   scroll-behavior: smooth;
   padding: 10px 4px 14px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.grid-distrik::-webkit-scrollbar {
+  display: none;
 }
 
 .pembungkus-grid-distrik {
@@ -859,6 +865,12 @@ mark {
   .footer__nilai-grup { grid-template-columns: repeat(2, 1fr); }
   .kartu-kontribusi { flex-direction: column; }
   .kartu-kontribusi__ilustrasi { width: 100%; height: 160px; }
+  .kartu-distrik {
+    flex: 0 0 30%;
+    width: 30%;
+  }
+  .kartu-distrik__ikon { height: 72px; }
+  .kartu-distrik__nama { font-size: 0.86rem; }
 }
 
 @media (max-width: 520px) {
@@ -869,6 +881,8 @@ mark {
   .daftar-kampung { grid-template-columns: 1fr; }
   .panel-kampung__kepala { flex-direction: column; align-items: flex-start; }
   .footer__bawah { flex-direction: column; text-align: center; }
+  .kartu-distrik { padding: 12px 10px 16px; }
+  .kartu-distrik__ikon { height: 60px; margin-bottom: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
