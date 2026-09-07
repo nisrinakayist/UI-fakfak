@@ -879,8 +879,13 @@ mark {
     font-size: 0.72rem;
   }
   .kartu-distrik__nama {
-    font-size: 0.88rem;
-    line-height: 1.25;
+    display: block;
+    font-family: var(--font-judul);
+    font-weight: 600;
+    font-size: 0.92rem;        /* Sedikit diperkecil agar kata panjang lebih muat */
+    line-height: 1.2;
+    word-break: break-word;     /* Potong kata jika melebihi lebar card */
+    overflow-wrap: break-word;  /* Memastikan teks melipat ke bawah */
   }
   .kartu-distrik__jumlah {
     font-size: 0.75rem;
